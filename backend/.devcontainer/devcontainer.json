@@ -1,17 +1,19 @@
 {
-	"name": "Python3",
+	"name": "fastAPI backend",
 	"dockerComposeFile": "compose.yaml",
-	"service": "app",
+	"service": "backend",
 	"workspaceFolder": "/workspace",
 	"remoteUser": "${localEnv:USER_NAME}",
-    "containerUser": "${localEnv:USER_NAME}",
+	"containerUser": "${localEnv:USER_NAME}",
 	"remoteEnv": {
 		"USER_NAME": "${localEnv:USER_NAME}",
-    	"USER_UID": "${localEnv:USER_UID}",
-    	"USER_GID": "${localEnv:USER_GID}"
-  	},
-    "updateRemoteUserUID": true,
-	"forwardPorts": [3000],
+		"USER_UID": "${localEnv:USER_UID}",
+		"USER_GID": "${localEnv:USER_GID}"
+	},
+	"updateRemoteUserUID": true,
+	"forwardPorts": [
+		8080
+	],
 	"mounts": [
 		"source=${localWorkspaceFolder}/,target=/workspace,type=bind"
 	],
@@ -21,9 +23,9 @@
 				"eamodio.gitlens",
 				"charliermarsh.ruff"
 			],
-			 "settings": {
-    			"terminal.integrated.defaultProfile.linux": "bash"
-  			}
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash"
+			}
 		}
 	}
 }

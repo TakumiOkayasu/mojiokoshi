@@ -30,3 +30,4 @@ RUN chmod 777 1_create_user.sh && chmod 777 2_terminal_config.sh \
 WORKDIR /workspace
 USER ${USER_NAME}
 
+SHELL ["/bin/bash"]
