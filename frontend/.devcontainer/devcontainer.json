@@ -1,0 +1,30 @@
+{
+	"name": "Bun+React+Vite",
+	"dockerComposeFile": "compose.yaml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
+	"remoteUser": "${localEnv:USER_NAME}",
+    "containerUser": "${localEnv:USER_NAME}",
+	"remoteEnv": {
+		"USER_NAME": "${localEnv:USER_NAME}",
+    	"USER_UID": "${localEnv:USER_UID}",
+    	"USER_GID": "${localEnv:USER_GID}"
+  	},
+    "updateRemoteUserUID": true,
+	"forwardPorts": [3000],
+	"mounts": [
+		"source=${localWorkspaceFolder}/,target=/workspace,type=bind"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"biomejs.biome",
+				"eamodio.gitlens",
+				"oven.bun-vscode"
+			],
+			 "settings": {
+    			"terminal.integrated.defaultProfile.linux": "bash"
+  			}
+		}
+	}
+}

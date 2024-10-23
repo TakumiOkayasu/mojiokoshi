@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: dockerfile
+      args:
+        USER_NAME: ${USER_NAME}
+        USER_UID: ${USER_UID}
+        USER_GID: ${USER_GID}
+    command: sleep infinity
+    env_file:
+      - ./.env
+    environment:
+      - USER_NAME = ${USER_NAME}
+      - USER_UID = ${USER_UID}
+      - USER_GID = ${USER_GID}
