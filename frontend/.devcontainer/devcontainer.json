@@ -4,14 +4,16 @@
 	"service": "frontend",
 	"workspaceFolder": "/workspace",
 	"remoteUser": "${localEnv:USER_NAME}",
-    "containerUser": "${localEnv:USER_NAME}",
+	"containerUser": "${localEnv:USER_NAME}",
 	"remoteEnv": {
 		"USER_NAME": "${localEnv:USER_NAME}",
-    	"USER_UID": "${localEnv:USER_UID}",
-    	"USER_GID": "${localEnv:USER_GID}"
-  	},
-    "updateRemoteUserUID": true,
-	"forwardPorts": [3000],
+		"USER_UID": "${localEnv:USER_UID}",
+		"USER_GID": "${localEnv:USER_GID}"
+	},
+	"updateRemoteUserUID": true,
+	"forwardPorts": [
+		5173
+	],
 	"mounts": [
 		"source=${localWorkspaceFolder}/,target=/workspace,type=bind"
 	],
@@ -23,9 +25,9 @@
 				"oven.bun-vscode",
 				"pizzacat83.codic"
 			],
-			 "settings": {
-    			"terminal.integrated.defaultProfile.linux": "bash"
-  			}
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash"
+			}
 		}
 	}
 }
