@@ -1,5 +1,5 @@
 services:
-  app:
+  frontend:
     build:
       context: ./
       dockerfile: dockerfile
@@ -11,6 +11,6 @@ services:
     env_file:
       - ./.env
     environment:
-      - USER_NAME = ${USER_NAME}
-      - USER_UID = ${USER_UID}
-      - USER_GID = ${USER_GID}
+      - USER_NAME
+      - USER_UID
+      - USER_GID
