@@ -21,7 +21,8 @@
 		"vscode": {
 			"extensions": [
 				"eamodio.gitlens",
-				"charliermarsh.ruff"
+				"charliermarsh.ruff",
+				"pizzacat83.codic"
 			],
 			"settings": {
 				"terminal.integrated.defaultProfile.linux": "bash"

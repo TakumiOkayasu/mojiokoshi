@@ -20,7 +20,8 @@
 			"extensions": [
 				"biomejs.biome",
 				"eamodio.gitlens",
-				"oven.bun-vscode"
+				"oven.bun-vscode",
+				"pizzacat83.codic"
 			],
 			 "settings": {
     			"terminal.integrated.defaultProfile.linux": "bash"
