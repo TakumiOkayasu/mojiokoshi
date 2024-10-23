@@ -3,6 +3,7 @@
 	"dockerComposeFile": "compose.yaml",
 	"service": "backend",
 	"workspaceFolder": "/workspace",
+	"postCreateCommand": "pip install -r /workspace/requirements.txt",
 	"remoteUser": "${localEnv:USER_NAME}",
 	"containerUser": "${localEnv:USER_NAME}",
 	"remoteEnv": {
