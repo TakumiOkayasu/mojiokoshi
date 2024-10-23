@@ -10,6 +10,7 @@ ARG USER_UID  ${USER_UID}
 ARG USER_GID  ${USER_GID}
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    software-properties-common \
     bash \
     curl \
     git \
@@ -17,6 +18,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ssh \
     build-essential \
     ca-certificates \
+    && add-apt-repository ppa:mc3man/trusty-media \
+    && add-apt-repository --remove ppa:mc3man/trusty-media \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends ffmpeg \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -29,5 +34,3 @@ RUN chmod 777 1_create_user.sh && chmod 777 2_terminal_config.sh \
 
 WORKDIR /workspace
 USER ${USER_NAME}
-
-SHELL ["/bin/bash"]
