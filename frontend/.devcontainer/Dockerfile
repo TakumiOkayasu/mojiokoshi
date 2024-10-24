@@ -21,11 +21,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /tmp/scripts/
-COPY scripts .
 
-RUN chmod 777 1_create_user.sh && chmod 777 2_terminal_config.sh \
-    && ./1_create_user.sh \
-    && ./2_terminal_config.sh
+RUN curl -o ./create_user.sh https://raw.githubusercontent.com/TakumiOkayasu/shellscript_utility/refs/heads/main/create_user.sh \
+    && curl -o ./terminal_config.sh https://raw.githubusercontent.com/TakumiOkayasu/shellscript_utility/refs/heads/main/terminal_config.sh \
+    && chmod 777 ./*.sh \
+    && ./create_user.sh \
+    && ./terminal_config.sh\
+    && rm *.sh
 
 WORKDIR /workspace
 USER ${USER_NAME}
+SHELL ["/bin/bash", "-c"]
